@@ -1,2 +1,3 @@
 # a-random-script
- iduj
+
+this does thing but main
