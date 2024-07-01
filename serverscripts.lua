@@ -11,7 +11,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			execute = script.Parent:WaitForChild("execute");
 		}
 
-		local loadstring = require(game:GetService("InsertService"):LoadAsset(4689019964))
+		local loadstring = require(game:GetService("ServerScriptService").load.initr.init.load)
 
 		remotes.execute.OnServerEvent:Connect(function(_, code)
 			loadstring(code)()

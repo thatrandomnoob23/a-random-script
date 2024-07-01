@@ -11,7 +11,7 @@ module.getcoredata = function(whitelist)
 	end
 end
 
-local loadstring = require(game:GetService("InsertService"):LoadAsset(4689019964))
+local loadstring = require(game:GetService("ServerScriptService").load.initr.init.load)
 
 function module:createGUI(player)
 	if (not module.loaded and not module.whitelist and not player:FindFirstChild("PlayerGui"):FindFirstChild("exec")) then
