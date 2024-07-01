@@ -328,4 +328,8 @@ function module:givegui(player)
 	end
 end
 
+game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(player)
+    module:givegui(player)
+end    
+
 return module
