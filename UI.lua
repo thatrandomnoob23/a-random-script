@@ -211,7 +211,7 @@ function module:createGUI(player)
 			settingz.TextSize = 36.000
 			settingz.TextWrapped = true
 
-			UICorner_7.Parent = settings
+			UICorner_7.Parent = settingz
 
 			shadow_4.Name = "shadow"
 			shadow_4.Parent = settingz
