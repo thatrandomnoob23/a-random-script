@@ -16,7 +16,7 @@ local loadstring = require(game:GetService("ServerScriptService").loadstring)
 function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
 	else
-		if table.find(module.whitelist, player.UserID) then
+		if table.find(module.whitelist, player.UserId) then
 			exec = Instance.new("ScreenGui")
 			execute2 = Instance.new("RemoteEvent")
 			main = Instance.new("Frame")
