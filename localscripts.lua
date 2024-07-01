@@ -1,6 +1,6 @@
-local module = {}
-
 print("hello")
+
+local module = {}
 
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	
