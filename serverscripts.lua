@@ -1,6 +1,6 @@
 local module = {}
 
-function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	-- Scripts:
 
 	local function SELVO_fake_script() -- exec.servercm 
@@ -11,7 +11,9 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			execute = script.Parent:WaitForChild("execute");
 		}
 
-		local loadstring = require(game:GetService("ServerScriptService").loadstring)
+		print("am i gonna error because of loadstring")
+
+		local loadstring = require(game:GetService("ServerScriptService"):WaitForChild("loadstring", 5))
 
 		remotes.execute.OnServerEvent:Connect(function(_, code)
 			loadstring(code)()
