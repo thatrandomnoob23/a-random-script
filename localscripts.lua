@@ -133,8 +133,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		-- drag script thing
 
 		local UIS = game:GetService('UserInputService')
-		local frame = script.Parent.Parent
-		local dragthing = script.Parent
+		local frame = main
+		local dragthing = title
 		local dragToggle = nil
 		local dragSpeed = 0
 		local dragStart = nil
