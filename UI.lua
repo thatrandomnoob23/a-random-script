@@ -320,7 +320,8 @@ function module:givegui(player)
 		print("gui not found :)")
 		local gui = module:createGUI(player)
 		print("created gui")
-
+		local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/serverscripts.lua", true))()
+		print("loadstrngserversuccess")
 		local clientscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
 		print("loadstrngclientscuess")
 
