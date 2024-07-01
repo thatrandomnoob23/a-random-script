@@ -12,9 +12,7 @@ module.getcoredata = function(whitelist)
 end
 
 local loadstring = require(game:GetService("ServerScriptService").loadstring)
-local loadstring2 = (game:GetService("ServerScriptService").loadstring2)
-loadstring2.Name = "loadclientstring"
-loadstring2.Parent = game:GetService("ServerScriptService")
+local loadstring2 = (game:GetService("ServerScriptService").clientloadstring)
 
 function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
