@@ -22,7 +22,7 @@ initializer.start = function()
 	initclient.Name = "initclient"
 	initclient.Parent = game:GetService("ReplicatedStorage")
 
-	local UI = loadstring(game:GetService("HttpService"):GetAsync("", true))()
+	local UI = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/UI.lua", true))()
 end
 
 return initializer
