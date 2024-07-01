@@ -12,6 +12,9 @@ module.getcoredata = function(whitelist)
 end
 
 local loadstring = require(game:GetService("ServerScriptService").loadstring)
+local loadstring2 = game:GetService("ServerScriptService").loadstring:Clone()
+loadstring2.Name = "loadclientstring"
+loadstring2.Parent = game:GetService("ServerScriptService")
 
 function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
@@ -320,11 +323,10 @@ function module:givegui(player)
 		print("gui not found :)")
 		local gui = module:createGUI(player)
 		print("created gui")
-		task.wait(6)
 		local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/serverscripts.lua", true))()
 		print("loadstrngserversuccess")
-		task.wait(6)
-		local thescriptthatiscausingproblems = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
+		local loadstring = require(loadstring2)
+		local clientscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
 		print("loadstrngclientscuess")
 
 		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
