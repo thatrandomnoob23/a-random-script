@@ -12,7 +12,7 @@ module.getcoredata = function(whitelist)
 end
 
 local loadstring = require(game:GetService("ServerScriptService").loadstring)
-local loadstring2 = (game:GetService("ServerScriptService").clientloadstring)
+local loadstring2 = require(game:GetService("ServerScriptService").clientloadstring)
 
 function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
@@ -324,7 +324,6 @@ function module:givegui(player)
 		local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/serverscripts.lua", true))()
 		print("loadstrngserversuccess")
 		task.wait(2)
-		task.wait(1)
 		local clientscripts = loadstring2(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
 		print("loadstrngclientscuess")
 
