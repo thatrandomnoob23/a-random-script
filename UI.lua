@@ -42,7 +42,7 @@ function module:createGUI(player)
 			shadow_3 = Instance.new("Frame")
 			UICorner_6 = Instance.new("UICorner")
 			UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
-			settings = Instance.new("TextButton")
+			settingz = Instance.new("TextButton")
 			UICorner_7 = Instance.new("UICorner")
 			shadow_4 = Instance.new("Frame")
 			UICorner_8 = Instance.new("UICorner")
@@ -198,25 +198,25 @@ function module:createGUI(player)
 			UITextSizeConstraint_3.Parent = scriptlist
 			UITextSizeConstraint_3.MaxTextSize = 20
 
-			settings.Name = "settings"
-			settings.Parent = buttons
-			settings.AnchorPoint = Vector2.new(0.5, 0.5)
-			settings.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-			settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			settings.BorderSizePixel = 0
-			settings.Size = UDim2.new(0.244, 0, 1, 0)
-			settings.ZIndex = 2
-			settings.Font = Enum.Font.SourceSansSemibold
-			settings.Text = "SETTINGS"
-			settings.TextColor3 = Color3.fromRGB(255, 255, 255)
-			settings.TextScaled = true
-			settings.TextSize = 36.000
-			settings.TextWrapped = true
+			settingz.Name = "settings"
+			settingz.Parent = buttons
+			settingz.AnchorPoint = Vector2.new(0.5, 0.5)
+			settingz.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+			settingz.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			settingz.BorderSizePixel = 0
+			settingz.Size = UDim2.new(0.244, 0, 1, 0)
+			settingz.ZIndex = 2
+			settingz.Font = Enum.Font.SourceSansSemibold
+			settingz.Text = "SETTINGS"
+			settingz.TextColor3 = Color3.fromRGB(255, 255, 255)
+			settingz.TextScaled = true
+			settingz.TextSize = 36.000
+			settingz.TextWrapped = true
 
 			UICorner_7.Parent = settings
 
 			shadow_4.Name = "shadow"
-			shadow_4.Parent = settings
+			shadow_4.Parent = settingz
 			shadow_4.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			shadow_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			shadow_4.BorderSizePixel = 0
@@ -225,7 +225,7 @@ function module:createGUI(player)
 
 			UICorner_8.Parent = shadow_4
 
-			UITextSizeConstraint_4.Parent = settings
+			UITextSizeConstraint_4.Parent = settingz
 			UITextSizeConstraint_4.MaxTextSize = 36
 
 			exec_2.Name = "exec"
@@ -323,8 +323,8 @@ function module:givegui(player)
 		local localscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true))()
 
 		gui.Parent = player:FindFirstChild("PlayerGui")
-		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
-		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	end
 end
 
