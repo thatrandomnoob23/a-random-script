@@ -14,7 +14,7 @@ end
 local loadstring = require(game:GetService("ServerScriptService").loadstring)
 
 function module:createGUI(player)
-	if (not module.loaded and not module.whitelist and not player:FindFirstChild("PlayerGui"):FindFirstChild("exec")) then
+	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
 	else
 		if table.find(module.whitelist, player.UserID) then
 			exec:Destroy()
@@ -330,6 +330,6 @@ end
 
 game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(player)
     print(player.Name)
-end    
+end)
 
 return module
