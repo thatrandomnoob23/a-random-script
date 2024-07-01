@@ -17,9 +17,6 @@ function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
 	else
 		if table.find(module.whitelist, player.UserID) then
-			exec:Destroy()
-			exec = nil
-
 			exec = Instance.new("ScreenGui")
 			execute2 = Instance.new("RemoteEvent")
 			main = Instance.new("Frame")
@@ -56,6 +53,7 @@ function module:createGUI(player)
 			TextLabel_2 = Instance.new("TextLabel")
 
 			exec.Name = "exec"
+			exec.Enabled = true
 			exec.ResetOnSpawn = false
 			exec.IgnoreGuiInset = true
 			exec.Parent = player:FindFirstChild("PlayerGui")
