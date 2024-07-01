@@ -1,5 +1,7 @@
 local module = {}
 
+print("hello")
+
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	
 	local fake_module_scripts = {}
