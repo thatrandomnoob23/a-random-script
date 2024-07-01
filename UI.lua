@@ -324,7 +324,7 @@ function module:givegui(player)
 
 		gui.Parent = player:FindFirstChild("PlayerGui")
 		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
-		gameGetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settings, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	end
 end
 
