@@ -1,23 +1,8 @@
 local module = {}
 
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
-	
-	local function FTRV_fake_script()
-		local script = Instance.new('LocalScript', exec)
-		local req = require
-		local require = function(obj)
-			local fake = fake_module_scripts[obj]
-			if fake then
-				return fake()
-			end
-			return req(obj)
-		end
-		script.Name = "clientloader"
+	local fake_module_scripts = {}
 
-		task.wait(2)
-		require(script.Parent:WaitForChild("coremodule")):init()
-	end
-	coroutine.wrap(FTRV_fake_script)()
 	local function SDOON_fake_script() -- title.drag 
 		local script = Instance.new('LocalScript', title)
 		local req = require
@@ -70,6 +55,23 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
 	end
 	coroutine.wrap(SDOON_fake_script)()
+
+	local function FTRV_fake_script()
+		local script = Instance.new('LocalScript', exec)
+		local req = require
+		local require = function(obj)
+			local fake = fake_module_scripts[obj]
+			if fake then
+				return fake()
+			end
+			return req(obj)
+		end
+		script.Name = "clientloader"
+
+		task.wait(2)
+		require(script.Parent:WaitForChild("coremodule")):init()
+	end
+	coroutine.wrap(FTRV_fake_script)()
 end
 
 return module
