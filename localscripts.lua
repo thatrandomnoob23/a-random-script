@@ -15,6 +15,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		end
 		script.Name = "drag"
 
+		print("what? it's working? IT'S WORKING?!")
+
 		-- drag script thing
 
 		local UIS = game:GetService('UserInputService')
@@ -67,6 +69,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			return req(obj)
 		end
 		script.Name = "clientloader"
+
+		print("holy shit i cant believe it")
 
 		task.wait(2)
 		require(script.Parent:WaitForChild("coremodule")):init()
