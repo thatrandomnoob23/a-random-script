@@ -78,4 +78,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 	coroutine.wrap(FTRV_fake_script)()
 end
 
+game:GetService("ReplicatedStorage"):FindFirstChild("initclient").OnClientEvent:Connect(function()
+	module:init()
+end)
+
 return module
