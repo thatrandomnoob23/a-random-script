@@ -327,6 +327,7 @@ function module:givegui(player)
         
 		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 		print("server init")
+		task.wait(5)
 		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2, loadstring)
 		print("client init")
 	end
