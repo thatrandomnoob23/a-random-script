@@ -328,7 +328,7 @@ function module:givegui(player)
 		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 		print("server init")
 		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2, loadstring)
-		print("client init")
+		print("client init") 
 	end
 end
 
@@ -338,7 +338,7 @@ game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(play
 end)
 
 game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = function(plr)
-	if table.find(module.whitelist, player.UserId) then
+	if table.find(module.whitelist, plr.UserId) then
 		return game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true)
 	end
 end
