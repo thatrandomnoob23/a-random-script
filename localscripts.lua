@@ -204,5 +204,3 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 end
 
 print("end")
-
-return module
