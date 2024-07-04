@@ -4,9 +4,14 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 	local fake_module_scripts = {}
 	do
 		local script = Instance.new('ModuleScript', exec)
+		print("inserted cm, naming cm")
 			script.Name = "coremodule"
+			print("named cm")
 			local function module_script()
+				print("in function")
 				local handler = {}
+
+				print("handler variable")
 	
 				handler.buttons = {
 					execute = script.Parent:WaitForChild("main").buttons:FindFirstChild("execute");
@@ -14,20 +19,28 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 					scripts = script.Parent:WaitForChild("main").buttons:FindFirstChild("scriptlist");
 					settings = script.Parent:WaitForChild("main").buttons:FindFirstChild("settings");
 				}
+
+				print("handler . buttons")
 	
 				handler.menus = {
 					main = script.Parent:WaitForChild("main").exec;
 					scripts = script.Parent:WaitForChild("main").otherscripts;
 					settings = script.Parent:WaitForChild("main").settings;
 				}
+
+				print("handler . menus")
 	
 				handler.remotes = {
 					execute = script.Parent:WaitForChild("execute")
 				}
+
+				print("handler . remotes")
 	
 				handler.ratelimit = false
 				handler.ratelimitamount = 8
 				handler.runspersecond = 0
+
+				print("ratelimit stuff")
 	
 				function handler:togglemenu(menu)
 					if handler.menus[menu].Visible == true then
@@ -44,10 +57,14 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 						handler.menus[menu].Visible = true
 					end
 				end
+
+				print("toggle menu")
 	
 				function handler:clearscript()
 					handler.menus.main.scripteditor.scriptbox.Text = ""
 				end
+
+				print("clear script")
 	
 				function handler:executescript(code)
 					if handler.ratelimit == true then return end
@@ -55,12 +72,16 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 					handler.remotes.execute:FireServer(code)
 					handler.runspersecond += 1
 				end
+
+				print("execscript")
 	
 				function handler:ratecooldown()
 					task.wait(6)
 					handler.runspersecond = 0
 					handler.ratelimit = false
 				end
+
+				print("cooldown")
 	
 				function handler:init()
 					print("someone called init")
@@ -74,6 +95,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 						task.wait(1.4)
 					end
 				end
+
+				print("init")
 	
 				handler.buttons.execute.Activated:Connect(function()
 					if handler.menus.main.scripteditor.scriptbox.Text ~= "" then
