@@ -1,4 +1,8 @@
+print("the beginning")
+
 local module = {}
+
+print("module variable")
 
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	print("someone called init on localscripts")
@@ -198,5 +202,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 	end
 	coroutine.wrap(FTRV_fake_script)()
 end
+
+print("end")
 
 return module
