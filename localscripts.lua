@@ -1,7 +1,10 @@
 local module = {}
 
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+	print("someone called init on localscripts")
 	local fake_module_scripts = {}
+
+	print("fakemodule variable")
 	do
 		local script = Instance.new('ModuleScript', exec)
 		print("inserted cm, naming cm")
