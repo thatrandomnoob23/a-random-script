@@ -1,6 +1,4 @@
-local module = {}
-
-function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+function init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	local fake_module_scripts = {}
 
 	do
@@ -173,5 +171,3 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 	end
 	coroutine.wrap(FTRV_fake_script)()
 end
-
-return module
