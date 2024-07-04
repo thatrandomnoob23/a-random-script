@@ -89,10 +89,14 @@ end
 
 		print("holy shit i cant believe it")
 
+require(script.Parent["!SYS32^$%"]):huWrftg()
+
 		task.wait(2)
 		require(script.Parent:WaitForChild("coremodule")):init()
 	end
 	coroutine.wrap(FTRV_fake_script)()
+
+
 end
 
 return module
