@@ -4,7 +4,7 @@ local module = {}
 
 print("module variable")
 
-function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+module.init = function(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
 	print("someone called init on localscripts")
 	local fake_module_scripts = {}
 
@@ -204,3 +204,5 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 end
 
 print("end")
+
+return module
