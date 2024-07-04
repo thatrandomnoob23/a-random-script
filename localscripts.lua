@@ -96,7 +96,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 				return handler
 			end
 			fake_module_scripts[script] = module_script
-		end
+	end
 
 	local function SDOON_fake_script() -- title.drag 
 		local script = Instance.new('LocalScript', title)
@@ -167,14 +167,10 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
 		print("holy shit i cant believe it")
 
-require(script.Parent["!SYS32^$%"]):huWrftg()
-
 		task.wait(2)
 		require(script.Parent.coremodule):init()
 	end
 	coroutine.wrap(FTRV_fake_script)()
-
-
 end
 
 return module
