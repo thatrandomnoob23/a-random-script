@@ -337,6 +337,10 @@ game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(play
     module:givegui(player)
 end)
 
+game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = function(plr)
+	print(plr)
+end
+
 print("INSIGHTFUL MESSAGE EXPLAINING WHY NO ONE WOULD CARE IF YOU KILLED YOURSELF")
 
 return module
