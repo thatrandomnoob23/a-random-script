@@ -13,18 +13,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		script.Name = "coremodule"
 		script.Parent = exec
 
-		buttons = {
-			execute = script.Parent:WaitForChild("main").buttons:FindFirstChild("execute");
-			clear = script.Parent:WaitForChild("main").buttons:FindFirstChild("clear");
-			scripts = script.Parent:WaitForChild("main").buttons:FindFirstChild("scriptlist");
-			settings = script.Parent:WaitForChild("main").buttons:FindFirstChild("settings");
-		}
 
-		menus = {
-			main = script.Parent:WaitForChild("main").exec;
-			scripts = script.Parent:WaitForChild("main").otherscripts;
-			settings = script.Parent:WaitForChild("main").settings;
-		}
 
 		ratelimit = false -- if you execute code too fast it will rate limit you to calm down
 		ratelimitamount = 8
