@@ -102,14 +102,6 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
 	local function SDOON_fake_script() -- title.drag 
 		local script = Instance.new('LocalScript', title)
-		local req = require
-		local require = function(obj)
-			local fake = fake_module_scripts[obj]
-			if fake then
-				return fake()
-			end
-			return req(obj)
-		end
 		script.Name = "drag"
 
 		print("what? it's working? IT'S WORKING?!")
