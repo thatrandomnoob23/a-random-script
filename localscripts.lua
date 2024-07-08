@@ -34,7 +34,36 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		ratelimitamount = 8
 		runspersecond = 0
 
-	
+
+
+		function clearscript()
+			menus.main.scripteditor.scriptbox.Text = ""
+		end
+
+		function executescript(code)
+			if ratelimit == true then return end
+
+			remotes.execute:FireServer(code)
+			runspersecond += 1
+		end
+
+		function ratecooldown()
+			task.wait(6)
+			runspersecond = 0
+			ratelimit = false
+		end
+
+		function init()
+			while true do
+				if runspersecond >= ratelimitamount and ratelimit == false then
+					ratelimit = true
+					ratecooldown()
+				elseif runspersecond < ratelimitamount and ratelimit == false then
+					runspersecond = 0
+				end
+				task.wait(2)
+			end
+		end
 
 		buttons.execute.Activated:Connect(function()
 			if menus.main.scripteditor.scriptbox.Text ~= "" then
