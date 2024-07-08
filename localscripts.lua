@@ -92,7 +92,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
 		print("holy shit i cant believe it")
 
-
+		task.wait(2)
+		require(script.Parent.coremodule)
 	end
 	coroutine.wrap(FTRV_fake_script)()
 end
