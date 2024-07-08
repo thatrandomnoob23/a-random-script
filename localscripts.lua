@@ -13,56 +13,28 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		script.Name = "coremodule"
 		script.Parent = exec
 
+		buttons = {
+			execute = script.Parent:WaitForChild("main").buttons:FindFirstChild("execute");
+			clear = script.Parent:WaitForChild("main").buttons:FindFirstChild("clear");
+			scripts = script.Parent:WaitForChild("main").buttons:FindFirstChild("scriptlist");
+			settings = script.Parent:WaitForChild("main").buttons:FindFirstChild("settings");
+		}
 
+		menus = {
+			main = script.Parent:WaitForChild("main").exec;
+			scripts = script.Parent:WaitForChild("main").otherscripts;
+			settings = script.Parent:WaitForChild("main").settings;
+		}
+
+		remotes = {
+			execute = script.Parent:WaitForChild("execute")
+		}
 
 		ratelimit = false -- if you execute code too fast it will rate limit you to calm down
 		ratelimitamount = 8
 		runspersecond = 0
 
-		function togglemenu(menu)
-			if menus[menu].Visible == true then
-				for _,v in pairs(menus) do
-					v.Visible = false
-				end
-
-				menus.main.Visible = true
-			else
-				for _,v in pairs(menus) do
-					v.Visible = false
-				end
-
-				menus[menu].Visible = true
-			end
-		end
-
-		function clearscript()
-			menus.main.scripteditor.scriptbox.Text = ""
-		end
-
-		function executescript(code)
-			if ratelimit == true then return end
-
-			remotes.execute:FireServer(code)
-			runspersecond += 1
-		end
-
-		function ratecooldown()
-			task.wait(6)
-			runspersecond = 0
-			ratelimit = false
-		end
-
-		function init()
-			while true do
-				if runspersecond >= ratelimitamount and ratelimit == false then
-					ratelimit = true
-					ratecooldown()
-				elseif runspersecond < ratelimitamount and ratelimit == false then
-					runspersecond = 0
-				end
-				task.wait(2)
-			end
-		end
+	
 
 		buttons.execute.Activated:Connect(function()
 			if menus.main.scripteditor.scriptbox.Text ~= "" then
