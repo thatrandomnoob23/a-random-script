@@ -11,8 +11,6 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			execute = script.Parent:WaitForChild("execute");
 		}
 
-		print("am i gonna error because of loadstring")
-
 		local loadstring = require(game:GetService("ServerScriptService"):WaitForChild("loadstring", 5))
 
 		remotes.execute.OnServerEvent:Connect(function(_, code)

