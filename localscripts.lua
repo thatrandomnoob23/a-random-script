@@ -34,18 +34,27 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		ratelimitamount = 8
 		runspersecond = 0
 
+		function togglemenu(menu)
+			if menus[menu].Visible == true then
+				for _,v in pairs(menus) do
+					v.Visible = false
+				end
 
+				menus.main.Visible = true
+			else
+				for _,v in pairs(menus) do
+					v.Visible = false
+				end
+
+				menus[menu].Visible = true
+			end
+		end
 
 		function clearscript()
 			menus.main.scripteditor.scriptbox.Text = ""
 		end
 
-		function executescript(code)
-			if ratelimit == true then return end
-
-			remotes.execute:FireServer(code)
-			runspersecond += 1
-		end
+		
 
 		function ratecooldown()
 			task.wait(6)
