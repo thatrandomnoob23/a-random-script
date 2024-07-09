@@ -54,7 +54,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			menus.main.scripteditor.scriptbox.Text = ""
 		end
 
-		
+
 
 		function ratecooldown()
 			task.wait(6)
@@ -92,6 +92,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			togglemenu("settings")
 		end)
 	end
+    coroutine.wrap(FNCGF_fake_script)
 
 
 	local function SDOON_fake_script() -- title.drag 
