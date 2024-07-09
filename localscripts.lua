@@ -55,6 +55,12 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		end
 
 
+		function executescript(code)
+			if ratelimit == true then return end
+
+		    execute2:FireServer(code)
+			runspersecond += 1
+		end
 
 		function ratecooldown()
 			task.wait(6)
