@@ -92,7 +92,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 			togglemenu("settings")
 		end)
 	end
-    coroutine.wrap(FNCGF_fake_script)
+    coroutine.wrap(FNCGF_fake_script)()
 
 
 	local function SDOON_fake_script() -- title.drag 
