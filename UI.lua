@@ -11,7 +11,7 @@ module.getcoredata = function(whitelist)
 	end
 end
 
-local loadstring = require(game:GetService("ServerScriptService").loadstring)
+local loadstring = require(game:GetService("ReplicatedStorage").loadstring)
 
 function module:createGUI(player)
 	if module.loaded == false and module.whitelist == nil and player:FindFirstChild("PlayerGui"):FindFirstChild("exec") then
